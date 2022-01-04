@@ -1,4 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
+import Section from "../components/section";
 
 export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
@@ -41,9 +42,11 @@ export const getStaticProps = async () => {
 
   const productsData = await graphQLClient.request(queryProducts);
   const products = productsData.products;
+  console.log('products', productsData)
 
   const bannersData = await graphQLClient.request(queryBanners);
   const banners = bannersData.promotionalBanners;
+  
 
   return {
     props: {
@@ -54,8 +57,41 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ products, banners }) => {
-  console.log(banners);
-  return <div></div>;
+  const filterProducts = (products, genre) => {
+    return products.filter((product) => product.tags.includes(genre));
+  };
+
+  const randomPromotionalBanner = (banners) => {
+    return banners[Math.floor(Math.random() * banners.length)];
+  };
+
+  return (
+    <>
+      <div className="app">
+        <div className="main-product">
+          <img
+            src={randomPromotionalBanner(banners).image.url}
+            alt={randomPromotionalBanner(banners).title}
+          />
+        </div>
+        <div className="promo-text">
+          <h1>
+            Em compras acima de R$ 99,99 você pode parcelar em 10x no cartão sem
+            juros com frete GRÁTIS*
+          </h1>
+        </div>
+        <div className="product-feed">
+          <Section
+            genre={"novidade"}
+            products={filterProducts(products, "novidade")}
+          />
+          <Section genre={"jogo"} products={filterProducts(products, "jogo")}/>
+          <Section genre={"console"} />
+          <Section genre={"acessório"} />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Home;

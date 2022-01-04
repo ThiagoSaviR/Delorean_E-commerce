@@ -3,7 +3,7 @@ import { gql, GraphQLClient} from 'graphql-request'
 export const getStaticProps = async () =>{
   const url = process.env.ENDPOINT;
   const graphQLClient = new GraphQLClient(url, {
-    headers: {
+    Headers: {
       Authorization : process.env.GRAPH_CMS_TOKEN,
     }
   })
@@ -39,7 +39,7 @@ export const getStaticProps = async () =>{
 const Home = ({ products }) => {
   console.log(products)
   return (
-    <div> hello
+    <div> 
       
     </div>
   )

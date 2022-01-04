@@ -1,48 +1,61 @@
-import { gql, GraphQLClient} from 'graphql-request'
+import { gql, GraphQLClient } from "graphql-request";
 
-export const getStaticProps = async () =>{
+export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
   const graphQLClient = new GraphQLClient(url, {
     Headers: {
-      Authorization : process.env.GRAPH_CMS_TOKEN,
-    }
-  })
-  
-  const query = gql`
-  query {
-    products{
-      createdAt,
-      id,
-      tilte,
-      description,
-      price,
-      slug,
-      tags,
-      image{
-        url
+      Authorization: process.env.GRAPH_CMS_TOKEN,
+    },
+  });
+
+  const queryProducts = gql`
+    query {
+      products {
+        createdAt
+        id
+        tilte
+        description
+        price
+        slug
+        tags
+        image {
+          url
+        }
       }
     }
-  }
-  `
+  `;
 
-  const data = await graphQLClient.request(query)
-  const products = data.products
-
-  return{
-    props:{
-      products,
-
+  const queryBanners = gql`
+    query {
+      promotionalBanners {
+        createdAt
+        id
+        tilte
+        description
+        image {
+          url
+        }
+      }
     }
-  }
-}
+  `;
 
-const Home = ({ products }) => {
-  console.log(products)
-  return (
-    <div> 
-      
-    </div>
-  )
-}
+  const productsData = await graphQLClient.request(queryProducts);
+  const products = productsData.products;
 
-export default Home
+  const bannersData = await graphQLClient.request(queryBanners);
+  const banners = bannersData.promotionalBanners;
+
+  return {
+    props: {
+      products,
+      banners,
+    },
+  };
+};
+
+const Home = ({ products, banners }) => {
+  console.log(banners);
+  return <div></div>;
+};
+
+export default Home;

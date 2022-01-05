@@ -1,5 +1,6 @@
 import { gql, GraphQLClient } from "graphql-request";
 import Section from "../components/section";
+import NavBar from "../components/NavBar"
 
 export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
@@ -14,7 +15,7 @@ export const getStaticProps = async () => {
       products {
         createdAt
         id
-        tilte
+        title
         description
         price
         slug
@@ -31,7 +32,7 @@ export const getStaticProps = async () => {
       promotionalBanners {
         createdAt
         id
-        tilte
+        title
         description
         image {
           url
@@ -42,12 +43,10 @@ export const getStaticProps = async () => {
 
   const productsData = await graphQLClient.request(queryProducts);
   const products = productsData.products;
-  console.log('products', productsData)
 
   const bannersData = await graphQLClient.request(queryBanners);
   const banners = bannersData.promotionalBanners;
   
-
   return {
     props: {
       products,
@@ -67,6 +66,7 @@ const Home = ({ products, banners }) => {
 
   return (
     <>
+      <NavBar/>
       <div className="app">
         <div className="main-product">
           <img
@@ -82,12 +82,12 @@ const Home = ({ products, banners }) => {
         </div>
         <div className="product-feed">
           <Section
-            genre={"novidade"}
+            genre={"Novidades na loja"}
             products={filterProducts(products, "novidade")}
           />
-          <Section genre={"jogo"} products={filterProducts(products, "jogo")}/>
-          <Section genre={"console"} />
-          <Section genre={"acessório"} />
+          <Section genre={"Jogos"} products={filterProducts(products, "jogo")}/>
+          <Section genre={"Consoles"} products={filterProducts(products, "console")} />
+          <Section genre={"Acessórios"} products={filterProducts(products, "acessório")} />
         </div>
       </div>
     </>

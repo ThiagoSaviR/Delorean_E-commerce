@@ -1,6 +1,7 @@
 import { gql, GraphQLClient } from "graphql-request";
 import NavBar from "../../components/NavBar";
-import Buttom from "../../components/buttom";
+import Button from "../../components/button";
+import Footer from "../../components/footer";
 
 export const getServerSideProps = async (pageContext) => {
   const url = process.env.ENDPOINT;
@@ -51,8 +52,14 @@ const Product = ({ product }) => {
         <img src={product.image.url} />
         <h2>R$ {product.price.toFixed(2)}</h2>
         <p>Ou em 3x no cartão de R$ {(product.price / 3).toFixed(2)}</p>
-        <Buttom />
+        <Button />
+        <div className="divider"></div>
+        <div className="description">
+        <h2>Descrição do produto:</h2>
+        <p>{product.description}</p>
+        </div>
       </div>
+      <Footer/>
     </>
   );
 };

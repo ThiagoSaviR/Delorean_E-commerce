@@ -62,6 +62,7 @@ a {
 }
 .logo{
   width: 250px;
+  padding-top: 0.5rem;
 }
 .menu{
   width: 100%;
@@ -83,9 +84,9 @@ a {
 }
 .product-page{
   width: 100%;
+  margin-top: 6.5rem; 
   display: flex;
   flex-direction: column;
-  margin-top: 7rem;
   padding: 1rem;
 }
 .product-page h1{
@@ -104,13 +105,78 @@ a {
 .product-page p{
   margin-top: 0;
 }
-buttom{
-  background: chartreuse;
+.button-add{
+  background: #80ff00;
   padding: 15px;
   border-radius: 10px;
   color: #fff;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
+  border: none;
+}
+.button-add:hover{
+  background: #61c200;
+
 }
 
+.divider{
+  margin: 2rem 0;
+  height: 1px;
+  background:#2F2E2E;
+}
+
+.description h2{
+  margin-bottom: 2rem;
+
+}
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #2F2E2E;
+}
+.container h1{
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.container h3{
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.containerInput{
+  background-color: #807D7D;
+  padding: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 1px 3px 8px rgba(0,0,0, 0.5);
+}
+.containerInput input{
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+  color: #fff;
+  outline: none;
+}
+.containerInput input::placeholder{
+  color: #f1f1f1;
+}
+.buttonSend{
+  background-color: #2F2E2E;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  cursor: pointer;
+}
 

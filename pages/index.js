@@ -1,6 +1,7 @@
 import { gql, GraphQLClient } from "graphql-request";
 import Section from "../components/section";
 import NavBar from "../components/NavBar"
+import Footer from "../components/footer";
 
 export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
@@ -90,6 +91,7 @@ const Home = ({ products, banners }) => {
           <Section genre={"Acessórios"} products={filterProducts(products, "acessório")} />
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

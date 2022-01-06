@@ -91,7 +91,6 @@ const Home = ({ products, banners }) => {
           <Section genre={"Acessórios"} products={filterProducts(products, "acessório")} />
         </div>
       </div>
-      <Footer/>
     </>
   );
 };

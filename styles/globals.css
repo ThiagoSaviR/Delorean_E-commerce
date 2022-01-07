@@ -15,7 +15,9 @@ a {
 * {
   box-sizing: border-box;
 }
-
+.app{
+  margin: 2px;
+}
 .main-product{
   margin-top: 10rem;
   margin-bottom: 20px;
@@ -101,10 +103,10 @@ a {
 }
 .product-page{
   width: 100%;
-  margin-top: 6.5rem; 
+  margin: 10rem 0; 
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+ 
 }
 .product-page h1{
   margin-bottom: 0;

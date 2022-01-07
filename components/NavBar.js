@@ -12,10 +12,10 @@ const NavBar = () => {
       </div>
       <div className="menu">
           <ul>
-            <li><a href="">Consoles</a></li>
-            <li><a href="">Jogos</a></li>
-            <li><a href="">Acessórios</a></li>
-            <li><a href="">Carrinho</a></li>
+            <li><a href={`/section/consoles`}>Consoles</a></li>
+            <li><a href={`/section/jogos`}>Jogos</a></li>
+            <li><a href={`/section/acessorios`}>Acessórios</a></li>
+            <li><a href={`/section/carrinho`}>Carrinho</a></li>
           </ul>
         </div>
     </nav>

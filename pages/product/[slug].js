@@ -1,7 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
-import NavBar from "../../components/NavBar";
 import Button from "../../components/button";
-import Footer from "../../components/footer";
 
 export const getServerSideProps = async (pageContext) => {
   const url = process.env.ENDPOINT;

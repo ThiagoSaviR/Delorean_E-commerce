@@ -2,7 +2,6 @@ import { gql, GraphQLClient } from "graphql-request";
 import Section from "../components/section";
 
 
-
 export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
   const graphQLClient = new GraphQLClient(url, {
@@ -47,7 +46,7 @@ export const getStaticProps = async () => {
 
   const bannersData = await graphQLClient.request(queryBanners);
   const banners = bannersData.promotionalBanners;
-  
+
   return {
     props: {
       products,
@@ -57,6 +56,7 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ products, banners }) => {
+  
   const filterProducts = (products, genre) => {
     return products.filter((product) => product.tags.includes(genre));
   };
@@ -67,10 +67,12 @@ const Home = ({ products, banners }) => {
 
   return (
     <>
-    
       <div className="app">
         <div className="main-product">
-          <img src={randomPromotionalBanner(banners).image.url} alt={randomPromotionalBanner(banners).title}/>
+          <img
+            src={randomPromotionalBanner(banners).image.url}
+            alt={randomPromotionalBanner(banners).title}
+          />
         </div>
         <div className="promo-text">
           <h1>
@@ -79,10 +81,22 @@ const Home = ({ products, banners }) => {
           </h1>
         </div>
         <div className="product-feed">
-          <Section genre={"Novidades na loja"} products={filterProducts(products, "novidade")}/>
-          <Section genre={"Jogos"} products={filterProducts(products, "jogo")}/>
-          <Section genre={"Consoles"} products={filterProducts(products, "console")} />
-          <Section genre={"Acessórios"} products={filterProducts(products, "acessório")} />
+          <Section
+            genre={"Novidades na loja"}
+            products={filterProducts(products, "novidade")}
+          />
+          <Section
+            genre={"Jogos"}
+            products={filterProducts(products, "jogo")}
+          />
+          <Section
+            genre={"Consoles"}
+            products={filterProducts(products, "console")}
+          />
+          <Section
+            genre={"Acessórios"}
+            products={filterProducts(products, "acessório")}
+          />
         </div>
       </div>
     </>

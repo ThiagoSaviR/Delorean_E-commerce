@@ -89,10 +89,19 @@ a {
 }
 .menu li {
   background: #807c7c;
-  border: 2px solid #2f2e2e;
+  border: 2px solid c;
   padding: 5px 10px;
   border-radius: 10px;
   color: #fff;
+  position: relative;
+}
+.num-cart{
+  background:rgb(235, 88, 88);
+  padding: 0px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top:-6px;
+  left: 67px;
 }
 .product-page {
   width: 100vw;

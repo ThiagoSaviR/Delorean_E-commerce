@@ -1,5 +1,6 @@
 import { gql, GraphQLClient } from "graphql-request";
 import Button from "../../components/button";
+import { useCart } from "../../contexts/cartContext";
 
 export const getServerSideProps = async (pageContext) => {
   const url = process.env.ENDPOINT;
@@ -42,6 +43,10 @@ export const getServerSideProps = async (pageContext) => {
 };
 
 const Product = ({ product }) => {
+  const cart = useCart()
+  const add = product => () => {
+    cart.addToCart(product)
+  }
   return (
     <div className="product-page">
       <div className="product">
@@ -50,7 +55,7 @@ const Product = ({ product }) => {
         <img src={product.image.url} />
         <h2 className="price">R$ {product.price.toFixed(2)}</h2>
         <p className="price3x">Ou em 3x no cartão de R$ {(product.price / 3).toFixed(2)}</p>
-        <Button />
+        <button className="button-add" onClick={add(product)}>Adicionar ao carrinho</button>
         <div className="divider"></div>
         <div className="description">
         <h2>Descrição do produto:</h2>

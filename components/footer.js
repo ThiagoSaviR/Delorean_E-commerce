@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
     <div className="container">
-      <h1 className="title">Assine nossa Newsletter</h1>
+      <h1>Assine nossa newsletter</h1>
+      <p>para receber nossas novidades</p>
+
       <div className="containerInput">
         <input
           type="text"

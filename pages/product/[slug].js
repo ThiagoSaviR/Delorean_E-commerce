@@ -43,13 +43,13 @@ export const getServerSideProps = async (pageContext) => {
 
 const Product = ({ product }) => {
   return (
-    <>
-      <div className="product-page">
+    <div className="product-page">
+      <div className="product">
         <h1>{product.title}</h1>
         <p>{product.tags.join(", ")}</p>
         <img src={product.image.url} />
-        <h2>R$ {product.price.toFixed(2)}</h2>
-        <p>Ou em 3x no cartão de R$ {(product.price / 3).toFixed(2)}</p>
+        <h2 className="price">R$ {product.price.toFixed(2)}</h2>
+        <p className="price3x">Ou em 3x no cartão de R$ {(product.price / 3).toFixed(2)}</p>
         <Button />
         <div className="divider"></div>
         <div className="description">
@@ -58,7 +58,7 @@ const Product = ({ product }) => {
         </div>
       </div>
       
-    </>
+    </div>
   );
 };
 

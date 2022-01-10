@@ -96,12 +96,16 @@ a {
   position: relative;
 }
 .num-cart{
+  width: 32px;
+  height: 32px;
+  text-align: center;
   background:rgb(235, 88, 88);
-  padding: 0px 6px;
+  border: 5px solid #2f2e2e;
+  
   border-radius: 50%;
   position: absolute;
-  top:-6px;
-  left: 67px;
+  top:-19px;
+  left: 55px;
 }
 .product-page {
   width: 100vw;

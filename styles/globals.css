@@ -99,7 +99,7 @@ a {
   width: 32px;
   height: 32px;
   text-align: center;
-  background:rgb(235, 88, 88);
+  background:#eb5858;
   border: 5px solid #2f2e2e;
   
   border-radius: 50%;
@@ -216,4 +216,85 @@ a {
   justify-self: center;
   align-items: center;
   cursor: pointer;
+}
+.table{
+  width: 100%;
+  display:flex;
+  justify-content: space-around;
+}
+
+.description-item{
+  width: 90%;
+  display: flex;
+  justify-content: start;
+  background: #fff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.568));
+}
+.image-item{
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+}
+.image-item img{
+  width: 52px;
+}
+.title-item{
+  width: 50%;
+}
+.title-item .title{
+  margin-top: 10px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.title-item .description{
+  margin-top: 0;
+  font-size: 0.8rem;
+}
+.price-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+}
+.price-item p{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.price-item button{
+  border: none;
+  background: #eb5858;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+.total{
+  width:90%;
+  display: flex;
+  justify-content: end;
+}
+.total h2{
+  margin-left: 10px;
+}
+
+.buy-button{
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+
+}
+.buy-button button{
+  width: 100%;
+  border: none;
+  padding: 15px 23px;
+  background: chartreuse;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+
 }

@@ -6,21 +6,17 @@ export const Cartcontext = createContext({});
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   useEffect(() => {
-    const localCart = window.localStorage.getItem('cart')
-    if(localCart){
-      setCart(JSON.parse(localCart))
+    const localCart = window.localStorage.getItem("cart");
+    if (localCart) {
+      setCart(JSON.parse(localCart));
     }
-  }, [])
+  }, []);
   const addToCart = (product) => {
-   
-    setCart((old) => {
-      const newCart = {
-        ...old,
-        [product.id]: product,
-      }
-      window.localStorage.setItem('cart', JSON.stringify(newCart))
-      return newCart
-    });
+    const newCart = [...cart, product];
+    setCart(newCart);
+
+    window.localStorage.setItem("cart", JSON.stringify(newCart));
+    return newCart;
   };
   return (
     <Cartcontext.Provider value={{ cart, addToCart }}>
@@ -30,6 +26,6 @@ export const CartProvider = ({ children }) => {
 };
 
 export const useCart = () => {
-    const cart = useContext(Cartcontext)
-    return cart
-}
+  const cartList = useContext(Cartcontext);
+  return cartList;
+};

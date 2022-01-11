@@ -53,6 +53,8 @@ const Product = ({ product }) => {
         <h1>{product.title}</h1>
         <p>{product.tags.join(", ")}</p>
         <img src={product.image.url} />
+      </div>
+      <div className="product">
         <h2 className="price">R$ {product.price.toFixed(2)}</h2>
         <p className="price3x">Ou em 3x no cartão de R$ {(product.price / 3).toFixed(2)}</p>
         <button className="button-add" onClick={add(product)}>Adicionar ao carrinho</button>
@@ -60,8 +62,9 @@ const Product = ({ product }) => {
         <div className="description">
         <h2>Descrição do produto:</h2>
         <p>{product.description}</p>
-        </div>
       </div>
+
+        </div>
       
     </div>
   );

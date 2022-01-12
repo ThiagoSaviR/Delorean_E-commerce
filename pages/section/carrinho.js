@@ -7,7 +7,7 @@ const Carrinho = () => {
   console.log(cart);
   let sumall = 0;
   return (
-    <div className="product-page">
+    <div className="product-sections">
       <div className="cartBanner">
         <Image src={carrinho} alt="Banner carrinho" />
       </div>
@@ -18,7 +18,9 @@ const Carrinho = () => {
         return (
           <div key={item.id} className="description-item">
             <div className="image-item">
+              <a key={item.id} href={`/product/${item.slug}`}>
               <img src={item.image.url} />
+              </a>
             </div>
             <div className="title-item">
               <p className="title">{item.title}</p>

@@ -48,10 +48,11 @@ const Product = ({ product }) => {
     cart.addToCart(product);
   };
   return (
+    <div className="page">
+      <h1>{product.title}</h1>
+      <p>{product.tags.join(", ")}</p>
     <div className="product-page">
       <div className="product">
-        <h1>{product.title}</h1>
-        <p>{product.tags.join(", ")}</p>
         <img src={product.image.url} />
       </div>
       <div className="product">
@@ -68,6 +69,7 @@ const Product = ({ product }) => {
           <p>{product.description}</p>
         </div>
       </div>
+    </div>
     </div>
   );
 };

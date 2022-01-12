@@ -43,7 +43,7 @@ const Acessorios = ({ products }) => {
     return products.filter((product) => product.tags.includes(genre));
   };
   return (
-      <div className="product-page">
+      <div className="product-sections">
           <Image src={acessorios} alt="bonner acessórios" />
           <Section products={filterProducts(products, "acessório")} />
       </div>

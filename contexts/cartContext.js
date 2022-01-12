@@ -18,6 +18,7 @@ export const CartProvider = ({ children }) => {
     window.localStorage.setItem("cart", JSON.stringify(newCart));
     return newCart;
   };
+ 
   return (
     <Cartcontext.Provider value={{ cart, addToCart }}>
       {children}

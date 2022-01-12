@@ -4,7 +4,6 @@ import { useCart } from "../../contexts/cartContext";
 
 const Carrinho = () => {
   const { cart } = useCart();
-  console.log(cart);
   let sumall = 0;
   return (
     <div className="product-sections page">

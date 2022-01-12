@@ -116,6 +116,9 @@ a {
   width: 100%;
   margin: 10rem 0 10rem 0;
 }
+.page h1, .page p{
+  margin-left: 1.5rem;
+}
 .product-page, .product-sections {
   width: 100%;
   display: flex;
@@ -321,24 +324,29 @@ a {
     margin: 10px;
   }
   .product {
-    width: 50%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: cente;
   }
-  .product img {
+  .product img{
     width: 80%;
+    flex-shrink: 1;
   }
 
   .page{
+    display: flex;
+    flex-direction: column;
     padding: 0 7rem;
+  }
+  .page h1, .page p{
+    margin-left: 0;
   }
 
   .product-page{
-   
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    
   }
 }

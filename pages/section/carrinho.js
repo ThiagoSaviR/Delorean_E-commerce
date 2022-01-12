@@ -1,5 +1,5 @@
 import Image from "next/image";
-import carrinho from "../../public/carrinho.png";
+import cartImg from "../../public/cart.png";
 import { useCart } from "../../contexts/cartContext";
 
 const Carrinho = () => {
@@ -7,9 +7,9 @@ const Carrinho = () => {
   console.log(cart);
   let sumall = 0;
   return (
-    <div className="product-sections">
+    <div className="product-sections page">
       <div className="cartBanner">
-        <Image src={carrinho} alt="Banner carrinho" />
+        <Image src={cartImg} alt="Banner carrinho" />
       </div>
       {cart.map((item) => {
         sumall = cart

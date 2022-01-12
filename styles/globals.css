@@ -99,6 +99,9 @@ a {
   color: #fff;
   position: relative;
 }
+.menu li:hover{
+  background: #5f5e5e;
+}
 .num-cart{
   width: 32px;
   height: 32px;
@@ -112,8 +115,8 @@ a {
   left: 55px;
 }
 .product-page {
-  width: 100vw;
-  margin: 10rem 0rem;
+  width: 100%;
+  margin: 10rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -320,6 +323,7 @@ a {
   .menu li {
     margin: 10px ;
   }
+
   .product{
     width: 40%;
     display: flex;

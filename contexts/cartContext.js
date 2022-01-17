@@ -14,13 +14,23 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
-
     window.localStorage.setItem("cart", JSON.stringify(newCart));
     return newCart;
   };
- 
+  const removeFromCart = (productId) => {
+    const newCart = [...cart];
+    const newCartFromRemove = [];
+    for (let item of newCart) {
+      if (item.id !== productId) {
+        newCartFromRemove.push(item);
+      }
+    }
+    setCart(newCartFromRemove);
+    window.localStorage.setItem("cart", JSON.stringify(newCartFromRemove));
+    return newCartFromRemove;
+  };
   return (
-    <Cartcontext.Provider value={{ cart, addToCart }}>
+    <Cartcontext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </Cartcontext.Provider>
   );

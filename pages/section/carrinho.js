@@ -3,15 +3,18 @@ import cartImg from "../../public/cart.png";
 import { useCart } from "../../contexts/cartContext";
 
 const Carrinho = () => {
-  const { cart } = useCart();
+  const cart = useCart();
+  const remove = id => () => {
+    cart.removeFromCart(id)
+  }
   let sumall = 0;
   return (
     <div className="product-sections page">
       <div className="cartBanner">
         <Image src={cartImg} alt="Banner carrinho" />
       </div>
-      {cart.map((item) => {
-        sumall = cart
+      {cart.cart.map((item) => {
+        sumall = cart.cart
           .map((item) => item.price)
           .reduce((prev, curr) => prev + curr, 0);
         return (
@@ -27,7 +30,7 @@ const Carrinho = () => {
             </div>
             <div className="price-item">
               <p>R$ {item.price.toFixed(2)}</p>
-              <button>Excluir</button>
+              <button onClick={remove(item.id)}>Excluir</button>
             </div>
           </div>
         );

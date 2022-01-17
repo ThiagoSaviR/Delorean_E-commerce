@@ -331,7 +331,6 @@ a {
   }
   .product img{
     width: 80%;
-    flex-shrink: 1;
   }
 
   .page{

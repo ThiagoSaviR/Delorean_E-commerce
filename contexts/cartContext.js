@@ -14,9 +14,12 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
+    console.log(newCart);
     window.localStorage.setItem("cart", JSON.stringify(newCart));
     return newCart;
   };
+
+  
   const removeFromCart = (productId) => {
     const newCart = [...cart];
     const newCartFromRemove = [];

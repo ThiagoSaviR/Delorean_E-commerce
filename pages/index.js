@@ -1,7 +1,6 @@
 import { gql, GraphQLClient } from "graphql-request";
 import Section from "../components/section";
 
-
 export const getStaticProps = async () => {
   const url = process.env.ENDPOINT;
   const graphQLClient = new GraphQLClient(url, {
@@ -20,7 +19,7 @@ export const getStaticProps = async () => {
         price
         slug
         tags
-        image {
+        images {
           url
         }
       }
@@ -56,7 +55,6 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ products, banners }) => {
-  
   const filterProducts = (products, genre) => {
     return products.filter((product) => product.tags.includes(genre));
   };

@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
         price
         slug
         tags
-        image {
+        images {
           url
         }
       }

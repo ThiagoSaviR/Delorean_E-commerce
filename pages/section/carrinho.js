@@ -21,7 +21,7 @@ const Carrinho = () => {
           <div key={item.id} className="description-item">
             <div className="image-item">
               <a key={item.id} href={`/product/${item.slug}`}>
-              <img src={item.image.url} />
+              <img src={item.images[0].url} />
               </a>
             </div>
             <div className="title-item">
